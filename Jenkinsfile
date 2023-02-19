@@ -1,6 +1,13 @@
 pipeline {
   agent any
   stages {
+
+   stage ('clean') {
+      steps {
+        sh ./gradlew clean
+      }
+    }
+
     stage ('Build') {
       steps {
         sh 'echo Hello Build stage'
